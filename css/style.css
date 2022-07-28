@@ -1,6 +1,7 @@
 /* geral */
+
 body {
-    font-family: 'Fira Sans', Arial;
+    font-family: 'Fira Sans', Arial, sans-serif;
     margin: 0px;
     color: #141414;
 }
@@ -21,25 +22,11 @@ img {
     display: block;
 }
 
-.subtitulo {
-    font-size: 8rem;
-    line-height: 1;
-    text-transform: uppercase;
-    word-break: break-all;
-    max-width: 4ch;
-}
 
-@media (max-width: 800px) {
-    .subtitulo {
-        font-size: 3rem;
-        text-transform: capitalize;
-        max-width: initial !important;
-    }
-}
 
 /* header */
 
-header {
+.header {
     max-width: 1200px;
     padding: 40px 20px;
     margin: 0 auto;
@@ -53,6 +40,7 @@ header {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+
     
 }
 
@@ -79,7 +67,80 @@ header {
 }
 
 
+/* introdução */
 
+
+.introducao {
+    max-width: 1200px;
+    padding: 40px 20px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 100px;
+    align-items: center; 
+}
+
+.introducao h1 {
+    font-size: 4.5rem;
+    line-height: 1.125;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.introducao h1::before {
+    content: "";
+    display: block;
+    width: 130px;
+    height: 100px;
+    background: url(/img/deco.svg) no-repeat center;
+    position: absolute;
+    top: -15px;
+    left: -40px;
+    z-index: -1;
+} 
+
+.introducao p {
+    font-size: 1.5rem;
+    color: #525252;
+}
+
+@media (max-width: 1000px) {
+    .introducao h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .introducao {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .introducao h1 {
+        font-size: 2rem;
+    }
+
+    .introducao h1::before {
+        width: 30px;
+        height: 10px;
+        left: 0px;
+    }
+   
+}
+
+
+@media (max-width: 400px) {
+    .introducao {
+        grid-template-columns: 1fr;
+    }
+    
+    .introducao img {
+        display: none;
+    }
+}
+
+
+/* MAIN */ 
 
 .experiencia {
     max-width: 1200px;
@@ -89,6 +150,13 @@ header {
     grid-template-columns: 1fr 2fr;
     gap: 100px;
 }
+.subtitulo {
+    font-size: 8rem;
+    line-height: 1;
+    text-transform: uppercase;
+    word-break: break-all;
+    max-width: 4ch;
+} 
 
 .experiencia .subtitulo {
     color: #e0e0e0;
@@ -188,7 +256,12 @@ header {
         color: #141414;
         font-weight: bold;
     }
-}
+    .subtitulo {
+        font-size: 3rem;
+        text-transform: capitalize;
+        max-width: initial !important;
+    }
+}    
 
 @media (max-width: 400px) {
     .empresa {
@@ -197,136 +270,7 @@ header {
 }
 
 
-/* introdução */
-.introducao {
-    max-width: 1200px;
-    padding: 40px 20px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 100px;
-    align-items: center; 
-}
 
-.introducao h1 {
-    font-size: 4.5rem;
-    line-height: 1.125;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.introducao h1::before {
-    content: "";
-    display: block;
-    width: 130px;
-    height: 100px;
-    background: url(/img/deco.svg) no-repeat center;
-    position: absolute;
-    top: -15px;
-    left: -40px;
-    z-index: -1;
-}
-
-.introducao p {
-    font-size: 1.5rem;
-    color: #525252;
-}
-
-@media (max-width: 1000px) {
-    .introducao h1 {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 800px) {
-    .introducao {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-
-    .introducao h1 {
-        font-size: 2rem;
-    }
-
-    .introducao h1::before {
-        width: 30px;
-        height: 10px;
-        left: 0px;
-    }
-}
-
-@media (max-width: 400px) {
-    .introducao {
-        grid-template-columns: 1fr;
-    }
-    
-    .introducao img {
-        display: none;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-/*  footer */
-
-
-
-.footer {
-    background: #000;
-}
-
-.footer-container {
-    max-width: 1200px;
-    padding: 120px 20px 60px 20px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    align-items: center;
-}
-
-.footer-texto {
-    font-size: 1.5rem;
-    line-height: 1.33;
-    color: #ccc;
-}
-
-.footer-contato li {
-    font-weight: bold;
-    font-size: 2.25rem;
-    line-height: 1.1;
-    color: #fff;
-    margin-bottom: 30px;
-}
-
-.footer-contato li a {
-    color: #fff;
-}
-
-.footer-copy {
-    grid-column: 1/-1;
-    font-size: 1.125rem;
-    color: #8f8f8f;
-}
-
-@media (max-width: 800px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .footer-contato li {
-        font-size: 1.5rem;
-    }
-}
 
 .formacao {
     background: #141414;
@@ -483,4 +427,67 @@ header {
         position: initial;
         margin-top: 10px;
     }
+    .formacao-container::after {   
+      
+        display: none; }
+  
+      
+}   
+
+
+
+
+/*  footer */
+
+
+
+.footer {
+    background: #000;
 }
+
+.footer-container {
+    max-width: 1200px;
+    padding: 120px 20px 60px 20px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.footer-texto {
+    font-size: 1.5rem;
+    line-height: 1.33;
+    color: #ccc;
+}
+
+.footer-contato li {
+    font-weight: bold;
+    font-size: 2.25rem;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.footer-contato li a {
+    color: #fff;
+}
+
+.footer-copy {
+    grid-column: 1/-1;
+    font-size: 1.125rem;
+    color: #8f8f8f;
+}
+
+@media (max-width: 800px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-contato li {
+        font-size: 1.5rem;
+    }
+}
+
+
